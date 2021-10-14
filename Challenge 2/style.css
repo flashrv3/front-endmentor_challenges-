@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 5px;
+  background-color: #0A0C1B;
+  font-size: 15px;
+}
+
+.card {
+ width: 88%;
+ max-width: 900px;
+ border-radius: 10px;
+ background-color: #1C1938;
+}
+
+.card__img {
+  width: 100%;
+}
+
+.card__photo {
+  width: 100%;
+  filter: invert(28%) sepia(11%) saturate(3000%) hue-rotate(249deg) brightness(45%) contrast(85%);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.card__description {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700; 
+  color: #fff;
+  text-align: center;
+  
+  padding: 0 42px;
+}
+
+.card__intro {
+  margin: 25px 0;
+}
+
+.card__intro--color {
+  color: #5C3B81;
+}
+
+.card__text {
+  margin: 25px 0;
+
+  color: #8D8BA1;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 22px;
+}
+
+.card__company {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card__numbers {
+  color: #fff;
+
+  margin-bottom: 6px;
+}
+
+.card__results {
+  color:#706D88;
+  font-family: 'Lexend Deca', sans-serif;
+  font-size: 10px;
+
+  margin-bottom: 20px;
+}
+
+/* media queries for desktop and laptops*/
+
+@media (min-width: 850px) {
+    body {
+      height: 100vh;
+    }  
+  .card {
+      display: grid; 
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: auto;
+      grid-template-areas:
+      "desc desc desc img img img"
+      "desc desc desc img img img"
+      "compa compa compa img img img";
+    }
+
+  .card__img {
+     grid-area: img;
+  }
+
+  .card__description { 
+    grid-area: desc;
+    align-self: center; 
+    text-align: left;
+  }
+  .card__footer {
+    grid-area: compa;
+    display: flex;
+    justify-content: center;
+  }
+
+  .card__company {
+    padding-right: 50px;
+  }
+
+  .card__photo {
+    height: 100%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+}
